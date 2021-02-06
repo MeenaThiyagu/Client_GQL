@@ -1,0 +1,18 @@
+type schema {
+  query: Query
+}
+type Query{
+	allClaimsFromService:[ClaimDental]
+}
+
+type ClaimDental{
+	dentalId:ID!
+	claimType : String
+	pharmacyClaimStatus: String
+	memberId : ID!
+	memberName : String
+}
+   
+	    
+
+
