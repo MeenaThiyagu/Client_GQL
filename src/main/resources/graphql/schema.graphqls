@@ -4,6 +4,7 @@ type schema {
 type Query{
 	allClaimsFromService:[ClaimDental]
 	allMedicalClaimsFromService:[ClaimMedical]
+	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
 }
 
 type ClaimDental{
