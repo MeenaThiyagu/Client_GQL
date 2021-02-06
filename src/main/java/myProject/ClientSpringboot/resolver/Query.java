@@ -1,4 +1,4 @@
-package myProject.ClientSpringboot.resolver;
+package myProject.ClientGraphQL.resolver;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
