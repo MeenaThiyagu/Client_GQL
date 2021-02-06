@@ -22,7 +22,7 @@ public class ClientGraphQL {
 	public static void main(String[] args) {
 		SpringApplication.run(ClientGraphQL.class, args);
 	}	
-	public static GraphQLSchema buildSchema(DentalClaimsService dentalClaimsService) {
+	public static GraphQLSchema buildSchema(DentalClaimsService dentalClaimsService, MedicalClaimsService medicalClaimsService) {
 		System.out.println("Inside GraphQL schema of main class- with kickstart");
 		return SchemaParser
 				.newParser()
