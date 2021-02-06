@@ -14,19 +14,27 @@ public class Query implements GraphQLQueryResolver {
 	@Autowired
 	DentalClaimsService dsObj;
 	
+	@Autowired
+	MedicalClaimsService msObj;
+	
 	
 	public Query() {
 		
 	}
-	public Query(DentalClaimsService dsObj) {
+	public Query(DentalClaimsService dsObj,MedicalClaimsService msObj) {
 		super();
 		this.dsObj = dsObj;
+		this.msObj = msObj;
 	}
 
 	
 	public List<ClaimDental> allClaimsFromService() throws JsonMappingException, JsonProcessingException{
 	return dsObj.findAllDental();	
 	}
+	
+	public List<ClaimMedical> allMedicalClaimsFromService() throws JsonMappingException, JsonProcessingException{
+		return msObj.findAllDental();	
+		}
 	
 	
 	

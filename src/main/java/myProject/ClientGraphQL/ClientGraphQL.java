@@ -15,6 +15,9 @@ public class ClientGraphQL {
 
 	@Autowired
 	private static DentalClaimsService dentalClaimsService;
+
+	@Autowired
+	private static MedicalClaimsService medicalClaimsService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(ClientGraphQL.class, args);
@@ -27,7 +30,7 @@ public class ClientGraphQL {
 				.newParser()
 				.file("graphql/schema.graphqls")
 //                .dictionary()
-				.resolvers(new Query(dentalClaimsService))
+				.resolvers(new Query(dentalClaimsService,medicalClaimsService))
 				.build()
 				.makeExecutableSchema();
 	}
