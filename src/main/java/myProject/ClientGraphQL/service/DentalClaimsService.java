@@ -33,7 +33,20 @@ public class DentalClaimsService {
 			HttpEntity<ClaimDental> entity = new HttpEntity<ClaimDental>(headers);
 			restTempObj.put(claimsCollectUri, entity);
 			String str=restTempObj.getForObject(claimsCollectUri, String.class);
-			System.out.println("String is "+str);
+			ClaimDental[] drObj=new ObjectMapper().readValue(str, ClaimDental[].class);
+			System.out.println("Drug added is of type HttpEntity"+drObj);
+			List<ClaimDental> dClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimDental[].class));
+			return dClaimsFromService;
+		}
+	    
+	    public List<ClaimDental> findThisPersonClaims(long memberId) throws JsonMappingException, JsonProcessingException {
+			// TODO Auto-generated method stub
+			final String claimsCollectUri="http://localhost:8082/getAllDentalClaims/"+memberId;
+			HttpHeaders headers = new HttpHeaders();
+			headers.setContentType(MediaType.APPLICATION_JSON);
+			HttpEntity<ClaimDental> entity = new HttpEntity<ClaimDental>(headers);
+			restTempObj.put(claimsCollectUri, entity);
+			String str=restTempObj.getForObject(claimsCollectUri, String.class);
 			ClaimDental[] drObj=new ObjectMapper().readValue(str, ClaimDental[].class);
 			System.out.println("Drug added is of type HttpEntity"+drObj);
 			List<ClaimDental> dClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimDental[].class));
