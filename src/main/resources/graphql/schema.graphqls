@@ -6,10 +6,10 @@ type Query{
 }
 
 type ClaimDental{
-	dentalId:ID!
+	dentalId:ID
 	claimType : String
 	pharmacyClaimStatus: String
-	memberId : ID!
+	memberId : Long
 	memberName : String
 }
    

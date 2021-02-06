@@ -22,9 +22,7 @@ import myProject.ClientGraphQL.model.ClaimDental;
 
 @Service
 public class DentalClaimsService {
-
-	 
-	    RestTemplate restTempObj=new RestTemplate();
+    RestTemplate restTempObj=new RestTemplate();
 	    HttpHeaders headers = new HttpHeaders();	
 		
 	    public List<ClaimDental> findAllDental() throws JsonMappingException, JsonProcessingException {
@@ -35,6 +33,7 @@ public class DentalClaimsService {
 			HttpEntity<ClaimDental> entity = new HttpEntity<ClaimDental>(headers);
 			restTempObj.put(claimsCollectUri, entity);
 			String str=restTempObj.getForObject(claimsCollectUri, String.class);
+			System.out.println("String is "+str);
 			ClaimDental[] drObj=new ObjectMapper().readValue(str, ClaimDental[].class);
 			System.out.println("Drug added is of type HttpEntity"+drObj);
 			List<ClaimDental> dClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimDental[].class));

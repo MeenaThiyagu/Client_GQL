@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.coxautodev.graphql.tools.SchemaParser;
 
 import graphql.schema.GraphQLSchema;
-import myProject.ClientSpringboot.resolver.Query;
+import myProject.ClientGraphQL.resolver.Query;
 import myProject.ClientGraphQL.service.*;
 
 @SpringBootApplication
