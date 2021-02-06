@@ -34,7 +34,6 @@ public class DentalClaimsService {
 			restTempObj.put(claimsCollectUri, entity);
 			String str=restTempObj.getForObject(claimsCollectUri, String.class);
 			ClaimDental[] drObj=new ObjectMapper().readValue(str, ClaimDental[].class);
-			System.out.println("Drug added is of type HttpEntity"+drObj);
 			List<ClaimDental> dClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimDental[].class));
 			return dClaimsFromService;
 		}
