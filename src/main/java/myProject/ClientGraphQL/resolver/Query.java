@@ -39,7 +39,9 @@ public class Query implements GraphQLQueryResolver {
 		return dsObj.findThisPersonClaims(memberId);
 	}
 	
-	
+	public List<ClaimMedical> getThisPersonMedicalClaims(long memberId) throws JsonMappingException, JsonProcessingException{
+		return msObj.findThisPersonClaims(memberId);
+	}
 	
 	
 	
