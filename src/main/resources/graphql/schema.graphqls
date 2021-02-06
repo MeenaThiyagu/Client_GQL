@@ -3,10 +3,20 @@ type schema {
 }
 type Query{
 	allClaimsFromService:[ClaimDental]
+	allMedicalClaimsFromService:[ClaimMedical]
 }
 
 type ClaimDental{
 	dentalId:ID
+	claimType : String
+	pharmacyClaimStatus: String
+	memberId : Long
+	memberName : String
+}
+
+
+type ClaimMedical{
+	medicalId:ID
 	claimType : String
 	pharmacyClaimStatus: String
 	memberId : Long
