@@ -6,8 +6,6 @@ public class ClaimDental {
 	    private Long memberId;
 	    private String pharmacyClaimStatus;
 	    private String memberName;
-
-
 	    public ClaimDental(Long dentalId, String claimType, Long memberId, String pharmacyClaimStatus,
 				String memberName) {
 			super();

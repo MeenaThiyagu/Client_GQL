@@ -8,12 +8,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import myProject.ClientGraphQL.model.ClaimDental;
 import myProject.ClientGraphQL.model.ClaimMedical;
 
 @Service
@@ -23,7 +20,7 @@ public class MedicalClaimsService {
 		
 	    public List<ClaimMedical> findAllDental() throws JsonMappingException, JsonProcessingException {
 			// TODO Auto-generated method stub
-			final String claimsCollectUri="http://localhost:8081/getAllMedicalClaims";
+			final String claimsCollectUri="http://localhost:8083/getAllMedicalClaims";
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			HttpEntity<ClaimMedical> entity = new HttpEntity<ClaimMedical>(headers);
