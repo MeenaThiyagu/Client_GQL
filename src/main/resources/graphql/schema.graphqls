@@ -3,9 +3,13 @@ type schema {
 }
 type Query{
 	allMedicalClaimsFromService:[ClaimMedical]
+<<<<<<< HEAD
 	getThisPersonMedicalClaims(memberId:ID!):[ClaimMedical]
 	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
 	allClaimsFromService: String
+=======
+	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
+>>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
 }
 
 type ClaimDental{

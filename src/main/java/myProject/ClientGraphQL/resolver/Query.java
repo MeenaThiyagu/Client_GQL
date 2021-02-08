@@ -55,7 +55,14 @@ public class Query implements GraphQLQueryResolver {
 	}
 	
 	public List<ClaimMedical> allMedicalClaimsFromService() throws JsonMappingException, JsonProcessingException{
+<<<<<<< HEAD
 		return msObj.findAllMedical();	
+=======
+		return msObj.findAllDental();	
+	}
+	public List<ClaimDental> getThisPersonDentalClaims(long memberId) throws JsonMappingException, JsonProcessingException{
+		return dsObj.findThisPersonClaims(memberId);
+>>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
 	}
 	
 	public List<ClaimMedical> getThisPersonMedicalClaims(long memberId) throws JsonMappingException, JsonProcessingException{
