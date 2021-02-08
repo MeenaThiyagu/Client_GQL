@@ -1,7 +1,13 @@
 package myProject.ClientGraphQL.model;
 
 public class ClaimDental {
-	 	private Long dentalId;
+	 	@Override
+	public String toString() {
+		return "ClaimDental [dentalId=" + dentalId + ", claimType=" + claimType + ", memberId=" + memberId
+				+ ", pharmacyClaimStatus=" + pharmacyClaimStatus + ", memberName=" + memberName + "]";
+	}
+
+		private Long dentalId;
 	    private String claimType;
 	    private Long memberId;
 	    private String pharmacyClaimStatus;

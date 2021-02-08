@@ -17,7 +17,7 @@ public class MedicalClaimsService {
     RestTemplate restTempObj=new RestTemplate();
 	    HttpHeaders headers = new HttpHeaders();	
 		
-	    public List<ClaimMedical> findAllDental() throws JsonMappingException, JsonProcessingException {
+	    public List<ClaimMedical> findAllMedical() throws JsonMappingException, JsonProcessingException {
 			// TODO Auto-generated method stub
 			final String claimsCollectUri="http://localhost:8083/getAllMedicalClaims";
 			HttpHeaders headers = new HttpHeaders();

@@ -2,6 +2,7 @@ package myProject.ClientGraphQL.service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 import javax.annotation.Resource;
 
@@ -51,4 +52,6 @@ public class DentalClaimsService {
 			List<ClaimDental> dClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimDental[].class));
 			return dClaimsFromService;
 		}
+
+		
 }

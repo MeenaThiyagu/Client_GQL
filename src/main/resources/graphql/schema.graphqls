@@ -2,10 +2,10 @@ type schema {
   query: Query
 }
 type Query{
-	allClaimsFromService:[ClaimDental]
 	allMedicalClaimsFromService:[ClaimMedical]
 	getThisPersonMedicalClaims(memberId:ID!):[ClaimMedical]
 	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
+	allClaimsFromService: String
 }
 
 type ClaimDental{

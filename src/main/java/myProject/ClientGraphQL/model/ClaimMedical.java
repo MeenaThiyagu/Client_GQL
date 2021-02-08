@@ -1,6 +1,7 @@
 package myProject.ClientGraphQL.model;
 public class ClaimMedical {
-	 	private Long medicalId;
+	 
+		private Long medicalId;
 	    private String claimType;
 	    private Long memberId;
 	    private String pharmacyClaimStatus;
@@ -59,4 +60,11 @@ public class ClaimMedical {
 		public void setMedicalId(Long medicalId) {
 			this.medicalId = medicalId;
 		}
+		
+		@Override
+		public String toString() {
+			return "ClaimMedical [medicalId=" + medicalId + ", claimType=" + claimType + ", memberId=" + memberId
+					+ ", pharmacyClaimStatus=" + pharmacyClaimStatus + ", memberName=" + memberName + "]";
+		}
+
 }
