@@ -40,30 +40,32 @@ public class Query implements GraphQLQueryResolver {
 	}
 
 	
-	public String allClaimsFromService() throws JsonMappingException, JsonProcessingException, InterruptedException, ExecutionException{
-		CompletableFuture<List<ClaimDental>> claimDental = allClaims.getDentalClaims();
-        CompletableFuture<List<ClaimMedical>> claimMedical = allClaims.getMedicalClaims();
-        CompletableFuture<List<ClaimDental>> claimDental2 = allClaims.getDentalClaims();
-        CompletableFuture.allOf(claimDental, claimMedical,claimDental2).join();
+	public Member allClaimsFromService(final long memberId) throws JsonMappingException, JsonProcessingException, InterruptedException, ExecutionException{
+		CompletableFuture<List<ClaimDental>> claimDental = allClaims.getDentalClaims(memberId);
+		System.out.println("Dental claims are "+claimDental.toString());
+        CompletableFuture<List<ClaimMedical>> claimMedical = allClaims.getMedicalClaims(memberId);
+        System.out.println("Medical claims are "+claimMedical.toString());
+     //   CompletableFuture<List<ClaimDental>> claimDental2 = allClaims.getDentalClaims();
+        CompletableFuture.allOf(claimDental, claimMedical).join();
         
+       Member member=new Member();
+       member.setMemberId(memberId);
+       member.setDentalLists(claimDental.get());
+       member.setMedicalLists(claimMedical.get());
         logger.info("Elapsed time: " + (System.currentTimeMillis() - start));
 	    logger.info("--> " + claimDental.get());
 	    logger.info("--> " + claimMedical.get());
-	    logger.info("--> " + claimDental2.get());
-       return "Completed";
+	  //  logger.info("--> " + claimDental2.get());
+
+       return member;
 
 	}
 	
 	public List<ClaimMedical> allMedicalClaimsFromService() throws JsonMappingException, JsonProcessingException{
-<<<<<<< HEAD
-		return msObj.findAllMedical();	
-=======
-		return msObj.findAllDental();	
+
+		return msObj.findAllMedical();		
 	}
-	public List<ClaimDental> getThisPersonDentalClaims(long memberId) throws JsonMappingException, JsonProcessingException{
-		return dsObj.findThisPersonClaims(memberId);
->>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
-	}
+	
 	
 	public List<ClaimMedical> getThisPersonMedicalClaims(long memberId) throws JsonMappingException, JsonProcessingException{
 		return msObj.findThisPersonClaims(memberId);

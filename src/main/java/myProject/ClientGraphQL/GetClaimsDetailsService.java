@@ -32,9 +32,9 @@ public class GetClaimsDetailsService {
 	  private RestTemplate restTemplate;
 	  
 	    @Async("asyncExecutor")
-	    public CompletableFuture<List<ClaimDental>> getDentalClaims() throws InterruptedException, JsonMappingException, JsonProcessingException 
-	    {   final String getDentalClaim = "http://localhost:8082/getDentalClaimsAsync";
-	    logger.info("Current Dental thread name " + Thread.currentThread().getName());
+	    public CompletableFuture<List<ClaimDental>> getDentalClaims(long memberId) throws InterruptedException, JsonMappingException, JsonProcessingException 
+	    {   final String getDentalClaim = "http://localhost:8082/getDentalClaimsAsync/"+memberId;
+	    logger.info("Current Dental thread name" + Thread.currentThread().getName());
 	         HttpHeaders headers = new HttpHeaders();
 				headers.setContentType(MediaType.APPLICATION_JSON);
 				HttpEntity<ClaimDental> entity = new HttpEntity<ClaimDental>(headers);
@@ -50,10 +50,10 @@ public class GetClaimsDetailsService {
 	    }
 	 
 	    @Async("asyncExecutor")
-	    public CompletableFuture<List<ClaimMedical>> getMedicalClaims() throws InterruptedException, JsonMappingException, JsonProcessingException 
+	    public CompletableFuture<List<ClaimMedical>> getMedicalClaims(long memberId) throws InterruptedException, JsonMappingException, JsonProcessingException 
 	    {
 	    	
-	    	 final String getMedicalClaim = "http://localhost:8083/getMedicalClaimsAsync";
+	    	 final String getMedicalClaim = "http://localhost:8083/getMedicalClaimsAsync/"+memberId;
 	    	 logger.info("Current medical thread name " + Thread.currentThread().getName());
 	    	 HttpHeaders headers = new HttpHeaders();
 				headers.setContentType(MediaType.APPLICATION_JSON);

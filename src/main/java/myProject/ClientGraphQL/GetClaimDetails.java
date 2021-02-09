@@ -10,9 +10,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 @Configuration
 @EnableAsync
 public class GetClaimDetails 
-{
-	
-    @Bean(name = "asyncExecutor")
+{    @Bean(name = "asyncExecutor")
     public Executor asyncExecutor() 
     {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();

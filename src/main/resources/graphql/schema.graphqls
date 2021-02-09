@@ -3,15 +3,17 @@ type schema {
 }
 type Query{
 	allMedicalClaimsFromService:[ClaimMedical]
-<<<<<<< HEAD
 	getThisPersonMedicalClaims(memberId:ID!):[ClaimMedical]
 	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
-	allClaimsFromService: String
-=======
+	allClaimsFromService(memberId:Long): Member
 	getThisPersonDentalClaims(memberId:ID!):[ClaimDental]
->>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
-}
 
+}
+type Member{
+	    memberId: ID
+	   dentalLists:[ClaimDental] 
+	   medicalLists: [ClaimMedical]
+}
 type ClaimDental{
 	dentalId:ID
 	claimType : String

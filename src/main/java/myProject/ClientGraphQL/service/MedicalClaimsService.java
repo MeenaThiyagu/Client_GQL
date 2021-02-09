@@ -31,10 +31,7 @@ public class MedicalClaimsService {
 			List<ClaimMedical> mClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimMedical[].class));
 			return mClaimsFromService;
 		}
-<<<<<<< HEAD
 
-=======
->>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
 		public List<ClaimMedical> findThisPersonClaims(long memberId) throws JsonMappingException, JsonProcessingException {
 			// TODO Auto-generated method stub
 			final String claimsCollectUri=	"http://localhost:8083/getAllMedicalClaims/"+memberId;
@@ -49,8 +46,6 @@ public class MedicalClaimsService {
 			List<ClaimMedical> mClaimsFromService=Arrays.asList(restTempObj.getForObject(claimsCollectUri, ClaimMedical[].class));
 			return mClaimsFromService;
 		}
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> a599e879d5391739fc37cb47e07cff6b350a13ce
+

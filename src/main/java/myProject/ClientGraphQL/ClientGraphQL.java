@@ -26,7 +26,6 @@ public class ClientGraphQL {
 		SpringApplication.run(ClientGraphQL.class, args);
 	}	
 	public static GraphQLSchema buildSchema(DentalClaimsService dentalClaimsService, MedicalClaimsService medicalClaimsService) {
-		System.out.println("Inside GraphQL schema of main class- with kickstart");
 		return SchemaParser
 				.newParser()
 				.file("graphql/schema.graphqls")
